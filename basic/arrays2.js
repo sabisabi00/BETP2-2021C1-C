@@ -22,6 +22,28 @@ const inventors = [
 
   // Ejercicio
   // Convertir el apellido a Mayusculas e imprimirlo
-  printInventors(inventors.map(inventor => ({first: inventor.first, last: inventor.last.toUpperCase(), year: inventor.year})));
+  printInventors(
+      inventors.map(
+          inventor => (
+              {
+                  first: inventor.first, 
+                  last: inventor.last.toUpperCase(), 
+                  year: inventor.year
+              }
+            )
+        )
+  );
+
+  // Ejercicio buscar el inventor Kepler y retornar ese objeto
+  console.log(inventors.findIndex(inventor => inventor.last === 'Kepler'));
+
+  // Ejercicio dentro de inventores hay alguno que nacio en 1858
+  console.log(inventors.some(inventor => inventor.year === 1858));
+  // every
+
+  // Ordenar los inventores por año
+  printInventors(inventors.sort((iventora, inventorb) => inventorb.year - iventora.year  ));
+
+  //[6,4,5,10,7].sort((a,b) => a - b );
 
   
