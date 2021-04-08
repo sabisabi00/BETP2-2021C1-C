@@ -40,3 +40,13 @@ const [profesor, asistente, ...alumnos] = curso;
 console.log(profesor, asistente, alumnos);
 
 // Swapping 
+let a = 5;
+let b = 6;
+
+// let aux = a;
+// a = b;
+// b = aux;
+
+[a, b] = [b, a];
+
+console.log(a, b);
