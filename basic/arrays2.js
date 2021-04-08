@@ -44,6 +44,5 @@ const inventors = [
   // Ordenar los inventores por año
   printInventors(inventors.sort((iventora, inventorb) => inventorb.year - iventora.year  ));
 
-  //[6,4,5,10,7].sort((a,b) => a - b );
 
   

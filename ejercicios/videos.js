@@ -20,5 +20,7 @@ const str = `<ul>
   <li data-time="5:59">Redux Video</li>
   <li data-time="3:31">Flexbox Video</li>
 </ul>`;
-
-// 
+// Parsear datos
+// Obtener el total de segundos de los videos de tipo Redux
+// Tip: Obtener un array de objetos, donde cada objeto sea un video
+// {min:5, seg: 59, tipo: 'Redux Video'}
