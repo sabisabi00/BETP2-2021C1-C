@@ -15,9 +15,8 @@
  * @return el numero de prisionero que recibe la ultima golosina
  */
 const saveThePrisoner = function(n,m,s){
-   let resto = m%n;
-   let resultado = s-1+resto;
-   return resultado;
+   const resto = m%n;
+   return s-1+resto;
 }
 
 // TEST TDD

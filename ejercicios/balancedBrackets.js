@@ -14,7 +14,18 @@
  * @return {boolean}
  */
 const isValid = function(s){
+    let aux = -1;
     
+    while(s.length != 0){
+        // Almaceno la longitud antes de hacer reemplazos
+        aux = s.length;
+
+        s = s.replace('()','');
+        s = s.replace('[]','');
+        s = s.replace('{}','');
+        if(aux === s.length) return false;
+    }
+    if(s.length === 0) return true;
 };
 
 // TESTS

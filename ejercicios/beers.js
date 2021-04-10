@@ -19,3 +19,31 @@ const beers = [
     { name: 'Belgian Wit', abv: 5.4, label: 'https://s3.amazonaws.com/brewerydbapi/beer/3CvVQG/upload_xOMnlK-large.png', type: 'Wheat' },
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
   ];
+
+const saleBeer = {name: 'Purple Iris', price: 320};
+
+function setPrice(beers){
+  return beers
+    .map(
+      beer => ({...beer, price: getPrice(beer)})
+    );
+}
+
+function getPrice(beer){
+  if(beer.name == saleBeer.name) 
+    return saleBeer.price;
+  return beer.abv < 5.0 ? 300 : 350
+}
+
+function setLabelFileName(beers){
+  return beers
+    .map(
+      beer => ({...beer, file_name: beer.label.split('/').pop() })
+    );
+}
+
+function sortType(beers){
+  return beers.sort((beerA, beerB) => beerA.type > beerB.type ? 1: -1)
+}
+
+console.log(sortType(setLabelFileName(setPrice(beers))));
