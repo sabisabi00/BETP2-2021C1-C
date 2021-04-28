@@ -1,4 +1,4 @@
-const inventorData = require("./inventor-data");
+//const inventorData = require("./inventor-data");
+import inventorData from './inventor-data.js';
 
-console.log(inventorData.getInventor(8));
-
+console.log(inventorData.getInventors());

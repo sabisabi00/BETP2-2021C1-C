@@ -1,6 +1,7 @@
-const fs = require('fs');
-const PATH = `${__dirname}/texto.txt`;
-const PATH_JSON = `${__dirname}/inventors.json`;
+//const fs = require('fs');
+import fs from "fs";
+const PATH = './texto.txt';
+const PATH_JSON = './crud/inventors.json';
 
 
 let texto = fs.readFileSync(PATH, 'utf-8');
