@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/ORT-PabloFernandez/BETP2-2021C1-C#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "chalk": "^4.1.0",
     "validator": "^13.6.0"
   },
