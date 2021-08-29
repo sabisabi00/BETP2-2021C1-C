@@ -1,0 +1,28 @@
+
+const saleBeer = {name: 'Purple Iris', price: 320};
+
+function setPrice(beers){
+  return beers
+    .map(
+      beer => ({...beer, price: getPrice(beer)})
+    );
+}
+
+function getPrice(beer){
+  if(beer.name == saleBeer.name) 
+    return saleBeer.price;
+  return beer.abv < 5.0 ? 300 : 350
+}
+
+function setLabelFileName(beers){
+  return beers
+    .map(
+      beer => ({...beer, file_name: beer.label.split('/').pop() })
+    );
+}
+
+function sortType(beers){
+  return beers.sort((beerA, beerB) => beerA.type > beerB.type ? 1: -1)
+}
+
+console.log(sortType(setLabelFileName(setPrice(beers))));

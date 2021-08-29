@@ -20,30 +20,31 @@ const beers = [
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
   ];
 
-const saleBeer = {name: 'Purple Iris', price: 320};
+   beers.map(beer => {
+    if(beer.name === 'Purple Iris'){
+      beer.precio = 320;
+    } else {
+      if(beer.abv >= 5){
+        beer.precio = 350;
+      } else {
+        beer.precio = 300;
+      }
+    }
+  }) 
 
-function setPrice(beers){
-  return beers
-    .map(
-      beer => ({...beer, price: getPrice(beer)})
-    );
-}
+  let link;
+  
+  beers.map(beer => {
+    link = beer.label.split("/");
+    beer.file_name = link.pop();
+  })
 
-function getPrice(beer){
-  if(beer.name == saleBeer.name) 
-    return saleBeer.price;
-  return beer.abv < 5.0 ? 300 : 350
-}
-
-function setLabelFileName(beers){
-  return beers
-    .map(
-      beer => ({...beer, file_name: beer.label.split('/').pop() })
-    );
-}
-
-function sortType(beers){
-  return beers.sort((beerA, beerB) => beerA.type > beerB.type ? 1: -1)
-}
-
-console.log(sortType(setLabelFileName(setPrice(beers))));
+beers.sort((beerA, beerB) => {
+  if (beerA.type > beerB.type){
+    return 1;
+  } else if (beerA.type < beerB.type){
+    return -1;
+  } else {
+    return 0;
+  }
+});
